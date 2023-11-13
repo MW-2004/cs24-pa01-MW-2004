@@ -28,6 +28,6 @@ ostream& operator<<(ostream& o, const card& c){
     else if(c.val==11) s="j";
     else if(c.val==12) s="q";
     else if(c.val==12) s="k";
-    o<<c.suit<<' '<<c.val;
+    o<<c.suit<<' '<<s;
     return o;
 }

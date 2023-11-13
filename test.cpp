@@ -3,7 +3,6 @@
 #include <vector>
 #include "cards.h"
 #include "utility.h"
-#include "bst.h"
 using namespace std;
 int main(){
     BST b;

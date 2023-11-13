@@ -17,7 +17,9 @@ struct card{
     bool operator<(card o) const;
     bool operator>(card o) const;
     bool operator==(card o) const;
-
+    card(char c, int n, bool inv=0, bool mark=0){
+        suit=c;val=n;
+    }
     friend ostream& operator<<(ostream& o, const card& c);
 };
 #endif //#ifndef CARDS_H

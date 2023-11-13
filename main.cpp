@@ -1,11 +1,9 @@
-//#define DEBUG
 
-#include "cards.h"
 #include "utility.h"
-#include "bst.h"
-//#include "cards.cpp"
-//#include "utility.cpp"
-//#include "bst.cpp"
+/*
+#include "cards.cpp"
+#include "utility.cpp"
+*/
 #include <iostream>
 #include <fstream>
 #include <string>
@@ -22,7 +20,7 @@ int main(int argv, char** argc){
     string filename1="acards.txt";
     string filename2="bcards.txt";
     #ifdef DEBUG
-    if(argv > 3){
+    if(argv > 2){
         filename1=argc[1];
         filename2=argc[2];
     }
@@ -84,10 +82,10 @@ int main(int argv, char** argc){
     }
     pprint();
     for(auto e:history){
-        if(!t1.remove(e)) t1.remove(card{e.suit,e.val,!e.inverse});
+        !t1.remove(e);
     }
     for(auto e:history){
-        if(!t2.remove(e)) t2.remove(card{e.suit,e.val,!e.inverse});
+        t2.remove(e);
     }
     pprint("Alice's cards:");
     for(auto e: t1) pprint(e);
