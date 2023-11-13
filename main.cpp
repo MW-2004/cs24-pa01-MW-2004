@@ -1,11 +1,11 @@
 //#define DEBUG
 
-//#include "cards.h"
-//#include "utility.h"
-//#include "bst.h"
-#include "cards.cpp"
-#include "utility.cpp"
-#include "bst.cpp"
+#include "cards.h"
+#include "utility.h"
+#include "bst.h"
+//#include "cards.cpp"
+//#include "utility.cpp"
+//#include "bst.cpp"
 #include <iostream>
 #include <fstream>
 #include <string>
