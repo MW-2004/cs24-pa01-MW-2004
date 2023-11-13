@@ -9,17 +9,15 @@
 using namespace std;
 
 struct card{
+    card(char c, int n, bool inv=0, bool mark=0);
     char suit;
     int val;
-    bool inverse=false;
-    bool mark=0;
+    bool inverse;
+    bool mark;
     int cmp() const;
     bool operator<(card o) const;
     bool operator>(card o) const;
     bool operator==(card o) const;
-    card(char c, int n, bool inv=0, bool mark=0){
-        suit=c;val=n;
-    }
     friend ostream& operator<<(ostream& o, const card& c);
 };
 #endif //#ifndef CARDS_H

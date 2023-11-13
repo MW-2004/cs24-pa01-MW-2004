@@ -3,8 +3,10 @@
 #include "cards.h"
 #include <string>
 #include <iostream>
+#include <vector>
 
-
+using std::string;
+using std::stoi;
 
 #ifdef DEBUG
 inline void print(){std::cout<<"\n";}
@@ -26,14 +28,10 @@ inline void print(const T1&first, const T&... t){
 }
 #define printnode(n) do{}while(0)
 #endif// #ifndef DEBUG
-using std::string;
-using std::stoi;
+
+
 
 card parsecard(string s, bool inv);
-#endif //#ifndef UTIL_CARD
-#include <vector>
-#ifndef BST_H
-#define BST_H
 
 class BST{
 public:
@@ -111,4 +109,4 @@ private:
     void _print(node *n) const;
     friend ostream& operator<<(ostream& o, const BST& t);
 };
-#endif //#ifndef BST_H
+#endif //#ifndef UTIL_CARD

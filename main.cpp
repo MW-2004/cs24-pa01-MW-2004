@@ -1,35 +1,17 @@
-
 #include "utility.h"
-/*
-#include "cards.cpp"
-#include "utility.cpp"
-*/
+#include "cards.h"
 #include <iostream>
 #include <fstream>
 #include <string>
-inline void pprint(){std::cout<<"\n";}
-template<typename T1, typename ...T>
-inline void pprint(const T1&first, const T&... t){
-    std::cout<<first<<" ";
-    pprint(t...);
-}
 using namespace std;
 
 int main(int argv, char** argc){
-    print("start");
-    string filename1="acards.txt";
-    string filename2="bcards.txt";
-    #ifdef DEBUG
-    if(argv > 2){
-        filename1=argc[1];
-        filename2=argc[2];
-    }
-    #else
     if(argv<3){
-        pprint("too few args");
+        cout<<"too few args\n";
         return 1;
     }
-    #endif
+    string filename1=argc[1];
+    string filename2=argc[2];
     ifstream cardFile1 (filename1);
     ifstream cardFile2 (filename2);
     string line;
@@ -56,7 +38,6 @@ int main(int argv, char** argc){
     vector<card>history;
     while(1){
         
-        //print(flag,*it1, *it2,it1==t1.end(),it2==t2.end());
         if(it2==t2.end()) flag=1;
         if(it1==t1.end()) flag=0;
         if(it1==t1.end()&&it2==t2.end()) break;
@@ -80,16 +61,16 @@ int main(int argv, char** argc){
             ++it2;
         }
     }
-    pprint();
+    cout<<'\n';
     for(auto e:history){
         !t1.remove(e);
     }
     for(auto e:history){
         t2.remove(e);
     }
-    pprint("Alice's cards:");
-    for(auto e: t1) pprint(e);
-    pprint("\nBob's cards:");
-    for(auto e: t2) pprint(e);
+    cout<<"Alice's cards:"<<'\n';
+    for(auto e: t1) cout<<e<<'\n';
+    cout<<"\nBob's cards:"<<'\n';
+    for(auto e: t2) cout<<e<<'\n';
     return 0;
 }

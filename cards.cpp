@@ -3,6 +3,11 @@
 // Implementation of the classes defined in cards.h
 #include "cards.h"
 #include <iostream>
+
+card::card(char c, int n, bool inv, bool mark){
+    suit=c;
+    val=n;
+}
 int card::cmp() const{
     static char suits[]="cdsh";
     int suitcmp=(strchr(suits, suit)-suits);
