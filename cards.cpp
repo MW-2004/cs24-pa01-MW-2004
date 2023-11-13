@@ -3,11 +3,6 @@
 // Implementation of the classes defined in cards.h
 #include "cards.h"
 #include <iostream>
-
-card::card(char c, int n, bool inv, bool mark){
-    suit=c;
-    val=n;
-}
 int card::cmp() const{
     static char suits[]="cdsh";
     int suitcmp=(strchr(suits, suit)-suits);
@@ -32,7 +27,7 @@ ostream& operator<<(ostream& o, const card& c){
     if(c.val==1) s="a";
     else if(c.val==11) s="j";
     else if(c.val==12) s="q";
-    else if(c.val==12) s="k";
+    else if(c.val==13) s="k";
     o<<c.suit<<' '<<s;
     return o;
 }

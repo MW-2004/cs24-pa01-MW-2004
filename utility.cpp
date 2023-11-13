@@ -9,6 +9,7 @@ card parsecard(string s, bool inv){
 }
 
 
+
 ostream& operator<<(ostream& o, const BST& t){
     t._print(t.root);
     return o;
@@ -48,6 +49,15 @@ bool BST::insert(card value, node *n) {
     return 1;
 }
 
+void BST::reverse_in_print() const{
+    _reverse_in_print(root);
+}
+void BST::_reverse_in_print(node *n) const{
+    if(!n) return;
+    _reverse_in_print(n->right);
+    cout<<n->val<<'\n';
+    _reverse_in_print(n->left);
+}
 bool BST::contains(card value) const{
     if(!root) return 0;
     card tmp=value;
